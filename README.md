@@ -118,6 +118,24 @@ update these files before publishing:
 - `robots.txt`: sitemap URL
 - `sitemap.xml`: canonical site URL
 
+## Vercel Notes
+
+This repository is intended to be deployed on Vercel as a static site.
+
+Recommended Vercel settings:
+
+- Framework Preset: `Other`
+- Root Directory: `.`
+- Build Command: empty
+- Output Directory: empty
+
+The repository also includes:
+
+- `vercel.json`: explicit root rewrite to `index.html`
+- `robots.txt`
+- `sitemap.xml`
+- `google44f67e72c2f51b18.html` for Google site verification at the root URL
+
 ## Editing Rules
 
 - Keep the docs consistent with deployed addresses and implementations.
