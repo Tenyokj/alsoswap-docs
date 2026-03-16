@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tenyokj.github.io/alsoswap-docs/sitemap.xml
+Sitemap: https://alsoswap-docs.vercel.app/sitemap.xml
