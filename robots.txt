@@ -1,0 +1,5 @@
+# Update the sitemap URL if the docs move to another domain.
+User-agent: *
+Allow: /
+
+Sitemap: https://tenyokj.github.io/alsoswap-docs/sitemap.xml

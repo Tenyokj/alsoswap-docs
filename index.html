@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlsoSwap Protocol Docs</title>
+    <meta
+      name="description"
+      content="AlsoSwap protocol documentation: architecture, contract reference, deployment addresses, operations, and integration guides."
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#8f2434" />
+    <link rel="canonical" href="https://tenyokj.github.io/alsoswap-docs/" />
+    <link rel="icon" href="./public/alsoswap.png" type="image/png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AlsoSwap Docs" />
+    <meta property="og:title" content="AlsoSwap Protocol Docs" />
+    <meta
+      property="og:description"
+      content="Architecture, AMM internals, contract reference, deployment addresses, security, and integration guides for AlsoSwap."
+    />
+    <meta property="og:url" content="https://tenyokj.github.io/alsoswap-docs/" />
+    <meta property="og:image" content="https://tenyokj.github.io/alsoswap-docs/public/alsoswap.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AlsoSwap Protocol Docs" />
+    <meta
+      name="twitter:description"
+      content="Architecture, AMM internals, contract reference, deployment addresses, security, and integration guides for AlsoSwap."
+    />
+    <meta name="twitter:image" content="https://tenyokj.github.io/alsoswap-docs/public/alsoswap.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <img class="brand-logo" src="./public/alsoswap.png" alt="AlsoSwap logo" />
+          <div>
+            <div class="brand-title">AlsoSwap Docs</div>
+            <div class="brand-subtitle">Protocol reference</div>
+          </div>
+        </div>
+
+        <nav id="nav" class="nav" aria-label="Documentation navigation"></nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div class="search-wrap">
+            <input id="searchInput" type="search" placeholder="Search docs..." aria-label="Search docs" />
+          </div>
+          <div class="topbar-actions">
+            <div class="topbar-meta">Sepolia</div>
+
+            <nav class="topbar-links" aria-label="External links">
+              <a class="icon-link" href="https://alsoswap.vercel.app" target="_blank" rel="noreferrer" aria-label="AlsoSwap website" title="Website">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M3.5 12h17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M12 3c2.2 2.4 3.4 5.8 3.4 9s-1.2 6.6-3.4 9c-2.2-2.4-3.4-5.8-3.4-9s1.2-6.6 3.4-9Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+                <span class="sr-only">Website</span>
+              </a>
+
+              <a class="icon-link" href="https://github.com/Tenyokj/alsoswap-core" target="_blank" rel="noreferrer" aria-label="GitHub core repository" title="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2.5a9.5 9.5 0 0 0-3 18.52c.47.09.64-.2.64-.45v-1.58c-2.6.57-3.15-1.1-3.15-1.1c-.42-1.08-1.03-1.37-1.03-1.37c-.84-.58.06-.57.06-.57c.94.06 1.43.97 1.43.97c.82 1.43 2.16 1.02 2.69.78c.08-.61.32-1.03.57-1.27c-2.08-.24-4.27-1.04-4.27-4.62c0-1.02.37-1.86.96-2.52c-.1-.24-.42-1.22.09-2.55c0 0 .78-.25 2.56.96c.74-.2 1.53-.3 2.32-.3s1.58.1 2.32.3c1.78-1.21 2.56-.96 2.56-.96c.51 1.33.19 2.31.1 2.55c.6.66.96 1.5.96 2.52c0 3.59-2.19 4.38-4.29 4.61c.34.29.63.86.63 1.74v2.58c0 .25.17.55.65.45A9.5 9.5 0 0 0 12 2.5Z" fill="currentColor"/>
+                </svg>
+                <span class="sr-only">GitHub</span>
+              </a>
+
+              <a class="icon-link" href="mailto:dv842449@gmail.com" aria-label="Email contact" title="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 6.5h16a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 16V8A1.5 1.5 0 0 1 4 6.5Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="m4 8l8 6l8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sr-only">Email</span>
+              </a>
+
+              <a class="icon-link" href="https://t.me/tenkoffj" target="_blank" rel="noreferrer" aria-label="Telegram" title="Telegram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.7 4.2L3.9 10.7c-1.15.46-1.14 1.1-.2 1.39l4.31 1.34l9.98-6.3c.47-.29.9-.13.55.18l-8.08 7.29l-.31 4.44c.46 0 .67-.21.93-.46l2.25-2.19l4.68 3.46c.86.47 1.48.23 1.69-.8l2.86-13.47c.31-1.27-.49-1.84-1.35-1.45Z" fill="currentColor"/>
+                </svg>
+                <span class="sr-only">Telegram</span>
+              </a>
+            </nav>
+          </div>
+        </header>
+
+        <article id="doc" class="doc"></article>
+        <footer id="pager" class="pager"></footer>
+      </main>
+    </div>
+
+    <script src="./assets/docs-data.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
