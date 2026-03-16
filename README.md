@@ -2,27 +2,32 @@
 
 Static documentation site for the AlsoSwap protocol.
 
-This repository contains a lightweight docs frontend built with plain HTML, CSS, and JavaScript. There is no build step and no framework runtime. All documentation pages are rendered from a single structured dataset in `assets/docs-data.js`.
+This repository contains a lightweight docs frontend built with plain HTML, CSS, and JavaScript. There is no build step and no framework runtime. The deployable site lives in `public/`, and all documentation pages are rendered from a single structured dataset in `public/assets/docs-data.js`.
 
 ## Stack
 
-- `index.html`: app shell and layout
-- `assets/styles.css`: visual theme, layout, typography, components
-- `assets/app.js`: navigation, routing by hash, search, pager
-- `assets/docs-data.js`: documentation content and page structure
+- `public/index.html`: app shell and layout
+- `public/assets/styles.css`: visual theme, layout, typography, components
+- `public/assets/app.js`: navigation, routing by hash, search, pager
+- `public/assets/docs-data.js`: documentation content and page structure
 - `public/alsoswap.png`: brand asset used in the sidebar
 
 ## Project Structure
 
 ```text
 .
-├── index.html
-├── assets
-│   ├── app.js
-│   ├── docs-data.js
-│   └── styles.css
+├── README.md
+├── vercel.json
 └── public
-    └── alsoswap.png
+    ├── index.html
+    ├── robots.txt
+    ├── sitemap.xml
+    ├── google44f67e72c2f51b18.html
+    ├── alsoswap.png
+    └── assets
+        ├── app.js
+        ├── docs-data.js
+        └── styles.css
 ```
 
 ## Local Preview
@@ -30,7 +35,7 @@ This repository contains a lightweight docs frontend built with plain HTML, CSS,
 Because the site is fully static, any simple local server will work.
 
 ```bash
-python3 -m http.server 4173
+python3 -m http.server -d public 4173
 ```
 
 Then open:
@@ -43,7 +48,7 @@ http://127.0.0.1:4173
 
 ### Add or update docs content
 
-Edit `assets/docs-data.js`.
+Edit `public/assets/docs-data.js`.
 
 Each page is an object with:
 
@@ -55,7 +60,7 @@ Each page is an object with:
 
 ### Update styles
 
-Edit `assets/styles.css`.
+Edit `public/assets/styles.css`.
 
 This file controls:
 
@@ -67,7 +72,7 @@ This file controls:
 
 ### Update behavior
 
-Edit `assets/app.js`.
+Edit `public/assets/app.js`.
 
 This file controls:
 
@@ -78,7 +83,7 @@ This file controls:
 
 ### Update logo or branding assets
 
-Replace `public/alsoswap.png` and adjust related styles in `assets/styles.css` if dimensions change.
+Replace `public/alsoswap.png` and adjust related styles in `public/assets/styles.css` if dimensions change.
 
 ## Content Notes
 
@@ -104,19 +109,19 @@ This repository can be deployed directly to any static hosting provider, for exa
 - Vercel
 - Netlify
 
-No build command is required. The host only needs to serve the repository root as a static site.
+No build command is required. The host only needs to serve the `public/` directory as a static site.
 
 If you deploy this repository to a domain other than:
 
 ```text
-https://tenyokj.github.io/alsoswap-docs/
+https://alsoswap-docs.vercel.app/
 ```
 
 update these files before publishing:
 
-- `index.html`: canonical, Open Graph, and Twitter image URLs
-- `robots.txt`: sitemap URL
-- `sitemap.xml`: canonical site URL
+- `public/index.html`: canonical, Open Graph, and Twitter image URLs
+- `public/robots.txt`: sitemap URL
+- `public/sitemap.xml`: canonical site URL
 
 ## Vercel Notes
 
@@ -127,19 +132,19 @@ Recommended Vercel settings:
 - Framework Preset: `Other`
 - Root Directory: `.`
 - Build Command: empty
-- Output Directory: empty
+- Output Directory: `public`
 
 The repository also includes:
 
-- `vercel.json`: explicit root rewrite to `index.html`
-- `robots.txt`
-- `sitemap.xml`
-- `google44f67e72c2f51b18.html` for Google site verification at the root URL
+- `vercel.json`: explicit `outputDirectory` pointing to `public`
+- `public/robots.txt`
+- `public/sitemap.xml`
+- `public/google44f67e72c2f51b18.html` for Google site verification at the root URL
 
 ## Editing Rules
 
 - Keep the docs consistent with deployed addresses and implementations.
-- Treat `assets/docs-data.js` as the canonical source for visible content.
+- Treat `public/assets/docs-data.js` as the canonical source for visible content.
 - Prefer updating existing sections instead of creating duplicate topics.
 - When changing protocol behavior, update both docs content and any environment/address references together.
 
